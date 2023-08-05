@@ -1,0 +1,9 @@
+/* custom carousel settings  */
+
+.carousel-img-height {
+  max-height: 250px;
+}
+
+.custom-carousel .carousel-inner .carousel-item {
+  transition-duration: 0.35s;
+}
