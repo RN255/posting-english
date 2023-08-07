@@ -1,5 +1,6 @@
 import React from "react";
 import List from "../components/List";
+import ApiRequest from "../components/ApiRequest";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <List></List>
       <List></List>
       <List></List>
+      <ApiRequest></ApiRequest>
     </>
   );
 }
