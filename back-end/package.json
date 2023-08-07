@@ -1,0 +1,11 @@
+{
+  "name": "posting-english",
+  "version": "1.0.0",
+  "description": "posting english",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
