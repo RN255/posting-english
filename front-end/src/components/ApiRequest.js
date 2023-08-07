@@ -19,6 +19,9 @@ function App() {
     <div>
       <p>This is the message:</p>
       <p>{data.message}</p>
+      <p>{data.name}</p>
+      <p>{data.location}</p>
+      <p>{data.salary}</p>
     </div>
   );
 }

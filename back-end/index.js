@@ -1,13 +1,15 @@
 const express = require("express");
-// const cors = require("cors"); - is this needed?
 const app = express();
-
-// app.use(cors()); // Enable CORS for all routes - is this needed?
 
 // Example route
 app.get("/api/data", (req, res) => {
   // Fetch data from your database or any source
-  const data = { message: "Hello from Express API!" };
+  const data = {
+    message: "Hello from Express API!",
+    name: "A school somewhere",
+    location: "Daejean",
+    salary: "3.3 million won",
+  };
   res.json(data);
 });
 
