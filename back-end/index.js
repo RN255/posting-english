@@ -1,5 +1,22 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
+
+const uri =
+  "mongodb+srv://robnickson-posting-english:TAVnyd8TDwn2kclC@cluster-posting-english.fro2rth.mongodb.net/?retryWrites=true&w=majority";
+
+// connect to mongodb
+
+async function connect() {
+  try {
+    await mongoose.connect(uri);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+connect();
 
 // Example route
 app.get("/api/data", (req, res) => {
