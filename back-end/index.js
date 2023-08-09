@@ -1,12 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 const app = express();
 
+app.use(express.json());
+app.use(cors());
+
+// db uri
 const uri =
   "mongodb+srv://robnickson-posting-english:TAVnyd8TDwn2kclC@cluster-posting-english.fro2rth.mongodb.net/?retryWrites=true&w=majority";
 
 // connect to mongodb
-
 async function connect() {
   try {
     await mongoose.connect(uri);
@@ -15,7 +20,6 @@ async function connect() {
     console.error(error);
   }
 }
-
 connect();
 
 // Example route
@@ -31,7 +35,6 @@ app.get("/api/data", (req, res) => {
 });
 
 // ... other routes and configurations ...
-
 app.listen(3001, () => {
   console.log("Express API is running on port 3001");
 });
