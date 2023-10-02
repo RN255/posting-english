@@ -2,7 +2,7 @@
   "name": "posting-english",
   "version": "1.0.0",
   "description": "posting english",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },

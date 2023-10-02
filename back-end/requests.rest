@@ -1,0 +1,18 @@
+GET http://localhost:3001/entries
+
+###
+
+POST http://localhost:3001/entry/new
+Content-Type: application/json
+
+{
+    "text": "entry TWO"
+}
+
+###
+
+DELETE http://localhost:3001/entry/delete/651b1e49698b1fa85bddf769
+
+###
+
+GET http://localhost:3001/entry/complete/651b1f01f6ffed7cbd63e4b7
