@@ -7,12 +7,20 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// This is the connection for mongo db
+// mongoose.connect("mongodb+srv://robnickson:touB9UEFxUWR0PXI@cluster-of-english-posting.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+// This is the old connection tyler potts used to connect to the local host
+// .connect("mongodb://127.0.0.1:27017/posting-english-db"
+
 //connect and give it a database name
 mongoose
-  .connect("mongodb://127.0.0.1:27017/posting-english-db", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://robnickson:touB9UEFxUWR0PXI@cluster-of-english-post.penyhyn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("connected to DB"))
   .catch(console.error);
 
