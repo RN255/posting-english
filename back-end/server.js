@@ -35,13 +35,33 @@ app.get("/entries", async (req, res) => {
 });
 
 // create a new entry
-app.post("/entry/new", (req, res) => {
-  const entry = new Entry({
-    text: req.body.text,
-  });
-  entry.save();
-  res.json(entry);
+// app.post("/entry/new", (req, res) => {
+//   const entry = new Entry({
+//     text: req.body.text,
+//     textTwo: req.body.textTwo,
+//   });
+//   entry.save();
+//   res.json(entry);
+// });
+
+app.post("/entry/new", async (req, res) => {
+  try {
+    const entry = new Entry({
+      text: req.body.text,
+      textTwo: req.body.textTwo,
+    });
+
+    // Save the entry to the database
+    await entry.save();
+
+    res.json(entry);
+  } catch (error) {
+    // Handle the error here
+    console.error("Error while saving entry:", error);
+    res.status(500).json({ error: "An error occurred while saving the entry." });
+  }
 });
+
 
 // delete an entry
 app.delete("/entry/delete/:id", async (req, res) => {

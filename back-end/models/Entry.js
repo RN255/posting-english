@@ -6,6 +6,10 @@ const EntrySchema = new Schema({
     type: String,
     required: true,
   },
+  textTwo: {
+    type: String,
+    required: false,
+  },
   complete: {
     type: Boolean,
     default: false,

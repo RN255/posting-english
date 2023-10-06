@@ -6,6 +6,7 @@ const API_BASE = "http://localhost:3001";
 export default function Home() {
   const [entries, setEntries] = useState([]);
   const [newEntry, setNewEntry] = useState("");
+  const [newEntryTwo, setNewEntryTwo] = useState("");
 
   useEffect(() => {
     GetEntries();
@@ -54,11 +55,13 @@ export default function Home() {
       },
       body: JSON.stringify({
         text: newEntry,
+        textTwo: newEntryTwo,
       }),
     }).then((res) => res.json());
 
     setEntries([...entries, data]);
     setNewEntry("");
+    setNewEntryTwo("");
   };
 
   return (
@@ -77,6 +80,7 @@ export default function Home() {
         {entries.map((entry) => (
           <div className="row" key={entry._id}>
             <div className="col">{entry.text}</div>
+            <div className="col">{entry.textTwo}</div>
             <div
               className={
                 "col border " +
@@ -98,6 +102,11 @@ export default function Home() {
               type="text"
               onChange={(e) => setNewEntry(e.target.value)}
               value={newEntry}
+            ></input>
+            <input
+              type="text"
+              onChange={(e) => setNewEntryTwo(e.target.value)}
+              value={newEntryTwo}
             ></input>
             <button onClick={addNewEntry}>Click me</button>
           </div>
