@@ -1,5 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import SampleAd from "../components/SampleAd";
+
+import { Link } from "react-router-dom";
 
 const API_BASE = "http://localhost:3001";
 
@@ -111,6 +114,17 @@ export default function Home() {
             <button onClick={addNewEntry}>Click me</button>
           </div>
         </div>
+        <SampleAd entries={entries}></SampleAd>
+        {entries.map((entry) => (
+          <div className="row">
+            <Link
+              to={`/Individual-${entry._id}`}
+              className="text-decoration-none"
+            >
+              {entry._id}
+            </Link>
+          </div>
+        ))}
       </div>
     </>
   );
